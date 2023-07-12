@@ -9,8 +9,7 @@ RUN apt-get update
 RUN apt-get install -y libpq-dev
         
 # Install extensions for php
-RUN docker-php-ext-install pdo_pgsql mbstring exif pcntl
-RUN docker-php-ext-install gd \
+RUN docker-php-ext-install pdo_pgsql mbstring exif pcntl \
     && rm -rf /var/lib/apt/lists/*
 
 COPY  . /var/www/html/
